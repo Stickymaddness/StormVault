@@ -1,0 +1,3 @@
+[submodule "lib/Heroes.ReplayParser"]
+	path = lib/Heroes.ReplayParser
+	url = git://github.com/barrett777/Heroes.ReplayParser
