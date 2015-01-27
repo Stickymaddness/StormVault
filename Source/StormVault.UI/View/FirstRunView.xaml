@@ -1,0 +1,40 @@
+﻿<UserControl x:Class="StormVault.UI.View.FirstRunView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d">
+    <Grid x:Name="ViewContent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="50" />
+        </Grid.RowDefinitions>       
+        
+        <GroupBox Grid.Row="1" Width="700" Height="250" Header="Initial Settings">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="60" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1" />
+                    <ColumnDefinition Width="150" />
+                    <ColumnDefinition Width="350" />
+                    <ColumnDefinition Width="110" />
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Grid.Row="1" Grid.Column="1" Text="Player Name" Style="{StaticResource SubHeaderTextBlockStyle}" VerticalAlignment="Center" />
+                <TextBox Grid.Row="1" Grid.Column="2" Height="25" Width="120" HorizontalAlignment="Left" Text="{Binding PlayerName}"/>
+
+                <TextBlock Grid.Row="2" Grid.Column="1" Text="Replay Path" Style="{StaticResource SubHeaderTextBlockStyle}" VerticalAlignment="Center" />
+                <TextBox Grid.Row="2" Grid.Column="2" Height="25" Width="350" HorizontalAlignment="Left" Text="{Binding ReplayPath}"/>
+                <Button Grid.Row="2" Grid.Column="3" Content="Browse" Width="110" Height="25" Command="{Binding BrowseCommand}"/>
+
+                <Button Grid.Row="3" Grid.Column="1" Content="Save and Continue" Height="25" VerticalAlignment="Bottom" HorizontalAlignment="Left" Command="{Binding SaveCommand}" />
+            </Grid>
+        </GroupBox>
+    </Grid>
+</UserControl>

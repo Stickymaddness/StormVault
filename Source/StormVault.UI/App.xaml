@@ -1,0 +1,93 @@
+﻿<Application x:Class="StormVault.UI.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:chart="clr-namespace:De.TorstenMandelkow.MetroChart;assembly=De.TorstenMandelkow.MetroChart"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Theme/MetroDark.MSControls.Core.Implicit.xaml" />
+                <ResourceDictionary Source="Theme/MetroDark.MSControls.Toolkit.Implicit.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+            <SolidColorBrush x:Key="BackgroundKey" Color="#FF181818" />
+
+            <Style x:Key="HeaderTextBlockStyle" TargetType="TextBlock">
+                <Setter Property="FontSize" Value="22" />
+                <Setter Property="FontFamily" Value="Segoe UI" />
+                <Setter Property="Foreground" Value="#FF00AADE" />
+            </Style>
+
+            <Style x:Key="SubHeaderTextBlockStyle" TargetType="TextBlock">
+                <Setter Property="FontSize" Value="18" />
+                <Setter Property="FontFamily" Value="Segoe UI" />
+                <Setter Property="Foreground" Value="#FF00AADE" />
+            </Style>
+
+            <Style x:Key="MinimalChartStyle" TargetType="chart:ChartBase">
+                <Setter Property="Background" Value="Transparent" />
+                <Setter Property="Foreground" Value="White" />                
+                <Setter Property="FontSize" Value="12" />
+                <Setter Property="Width" Value="600"/>
+                <Setter Property="Height" Value="600"/>
+            </Style>
+
+            <Style x:Key="{x:Type DataGridCell}" TargetType="{x:Type DataGridCell}" >
+                <Style.Triggers>
+                    <Trigger Property="IsSelected" Value="True">
+                        <Setter Property="Foreground" Value="White"/>
+                    </Trigger>
+                    <Trigger Property="IsSelected" Value="False">
+                        <Setter Property="Foreground" Value="#FF00AADE"/>
+                    </Trigger>                
+                </Style.Triggers>                
+            </Style>
+
+            <Style TargetType="DataGridRow">
+                <Style.Resources>
+                    <SolidColorBrush x:Key="{x:Static SystemColors.InactiveSelectionHighlightBrushKey}" Color="#FF00AADE"/>
+                    <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="#FF00AADE"/>
+                </Style.Resources>
+            </Style>
+
+            <Style TargetType="{x:Type DataGridRowHeader}">
+                <Setter Property="Background" Value="Blue" />
+            </Style>
+
+            <Style TargetType="{x:Type DataGridColumnHeader}">
+                <Setter Property="VerticalContentAlignment" Value="Center" />
+                <Setter Property="Height" Value="35" />
+                <Setter Property="SeparatorBrush" Value="Black" />
+                <Setter Property="FontWeight" Value="Black" />
+                <Setter Property="Background" Value="#FF181818"/>
+                <Setter Property="Foreground" Value="White" />
+                <Setter Property="HorizontalAlignment" Value="Stretch"/>
+            </Style>
+
+            <chart:ResourceDictionaryCollection x:Key="CustomColors">
+                <ResourceDictionary>
+                    <SolidColorBrush x:Key="Brush1" Color="#ff007d9d" />
+                </ResourceDictionary>
+                <ResourceDictionary>
+                    <SolidColorBrush x:Key="Brush2" Color="#FF638a2d" />
+                </ResourceDictionary>
+                <ResourceDictionary>
+                    <SolidColorBrush x:Key="Brush3" Color="#FFa11d20" />
+                </ResourceDictionary>
+                <ResourceDictionary>
+                    <SolidColorBrush x:Key="Brush4" Color="#FFdab850" />
+                </ResourceDictionary>
+                <ResourceDictionary>
+                    <SolidColorBrush x:Key="Brush5" Color="#FF8d37d5" />
+                </ResourceDictionary>
+                <ResourceDictionary>
+                    <SolidColorBrush x:Key="Brush6" Color="#FF37d54d" />
+                </ResourceDictionary>
+
+                
+                <!-- add more values with a different key -->
+            </chart:ResourceDictionaryCollection>
+
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

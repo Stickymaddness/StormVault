@@ -1,0 +1,44 @@
+﻿<UserControl x:Class="StormVault.UI.View.SettingsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             >
+    <Grid x:Name="ViewContent">
+        <GroupBox Width="700" Header="Settings" VerticalAlignment="Top" Margin="0, 50, 0, 0">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="20" />
+                    <RowDefinition Height="50" />
+                    <RowDefinition Height="50" />
+                    <RowDefinition Height="60" />
+                    <RowDefinition Height="20" />
+                    <RowDefinition Height="60" />
+                    <RowDefinition Height="50" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1" />
+                    <ColumnDefinition Width="150" />
+                    <ColumnDefinition Width="350" />
+                    <ColumnDefinition Width="110" />
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Grid.Row="1" Grid.Column="1" Text="Player Name" Style="{StaticResource SubHeaderTextBlockStyle}" VerticalAlignment="Center" />
+                <TextBox Grid.Row="1" Grid.Column="2" Height="25" Width="120" HorizontalAlignment="Left" Text="{Binding PlayerName}"/>
+
+                <TextBlock Grid.Row="2" Grid.Column="1" Text="Replay Path" Style="{StaticResource SubHeaderTextBlockStyle}" VerticalAlignment="Center" />
+                <TextBox Grid.Row="2" Grid.Column="2" Height="25" Width="350" HorizontalAlignment="Left" Text="{Binding ReplayPath}"/>
+                <Button Grid.Row="2" Grid.Column="3" Content="Browse" Width="110" Height="25" Command="{Binding BrowseCommand}"/>
+
+                <Button Grid.Row="3" Grid.Column="1" Content="Save" Height="25" VerticalAlignment="Center" HorizontalAlignment="Left" Command="{Binding SaveCommand}" />
+
+
+                <TextBlock Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="3" TextWrapping="Wrap" Text="StormVault can monitor your replay directory, and update its data when a new replay is created at the end of a match" FontSize="14" Style="{StaticResource SubHeaderTextBlockStyle}" />
+
+                <CheckBox Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="3" Content="Enable Replay Monitoring" IsChecked="{Binding MonitoringEnabled}"/>
+                
+            </Grid>
+        </GroupBox>
+    </Grid>
+</UserControl>

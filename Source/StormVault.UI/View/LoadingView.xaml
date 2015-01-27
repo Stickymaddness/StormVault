@@ -1,0 +1,18 @@
+﻿<UserControl x:Class="StormVault.UI.View.LoadingView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d">
+    <Grid x:Name="ViewContent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="200"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        
+        <TextBlock Grid.Row="0" Text="StormVault" Style="{StaticResource HeaderTextBlockStyle}" FontSize="54" HorizontalAlignment="Center"/>
+
+        <TextBlock Grid.Row="1" Text="{Binding LoadingText}" Style="{StaticResource HeaderTextBlockStyle}" HorizontalAlignment="Center"/>
+
+    </Grid>
+</UserControl>

@@ -1,0 +1,26 @@
+﻿<UserControl x:Class="StormVault.UI.View.MapView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:chart="clr-namespace:De.TorstenMandelkow.MetroChart;assembly=De.TorstenMandelkow.MetroChart"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid x:Name="ViewContent">
+
+        <chart:PieChart
+            Style="{StaticResource MinimalChartStyle}"
+        ChartTitle="Map statistics"
+            Palette="{StaticResource CustomColors}"
+        ChartSubTitle="">
+            <chart:PieChart.Series>
+                <chart:ChartSeries
+                SeriesTitle="Maps"
+                DisplayMember="Name"
+                ValueMember="Value"
+                ItemsSource="{Binding Path=MapStatistics}" />
+            </chart:PieChart.Series>
+        </chart:PieChart>
+
+    </Grid>
+</UserControl>

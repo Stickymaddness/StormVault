@@ -1,0 +1,86 @@
+﻿<UserControl x:Class="StormVault.UI.View.HeroView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:chart="clr-namespace:De.TorstenMandelkow.MetroChart;assembly=De.TorstenMandelkow.MetroChart"
+             mc:Ignorable="d" 
+             d:DesignHeight="Auto" d:DesignWidth="Auto">
+    <Grid x:Name="ViewContent">
+
+
+        <!--<DataGrid Grid.Row="1" Grid.ColumnSpan="2" 
+                  VerticalAlignment="Top"
+                  HorizontalAlignment="Center" 
+                  Width="800" 
+                  ItemsSource="{Binding HeroStatistics}" 
+                  AutoGenerateColumns="False" 
+                  Background="#FF181818" 
+                  RowBackground="#FF181818" 
+                  Foreground="#FF00AADE"
+                  IsEnabled="True"
+                  IsReadOnly="True"
+                  CanUserResizeRows="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Hero" Binding="{Binding Hero}" Width="*" />
+                <DataGridTextColumn Header="Number Of Matches" Binding="{Binding Matches}" Width="*" />
+                <DataGridTextColumn Header="Number Wins" Binding="{Binding Wins}" Width="*" />
+                <DataGridTextColumn Header="Number Losses" Binding="{Binding Losses}" Width="*" />
+                <DataGridTextColumn Header="Win Ratio" Binding="{Binding WinRatio}" Width="*" />
+            </DataGrid.Columns>
+        </DataGrid>-->
+
+        <!--<chart:PieChart
+            Style="{StaticResource MinimalChartStyle}"
+        ChartTitle="Hero statistics"
+            Palette="{StaticResource CustomColors}"
+        ChartSubTitle="">
+            <chart:PieChart.Series>
+                <chart:ChartSeries
+                SeriesTitle="Heroes"
+                DisplayMember="Hero"
+                ValueMember="Wins"
+                ItemsSource="{Binding Path=TopThreePlayed}"                     
+                    />
+            </chart:PieChart.Series>
+        </chart:PieChart>-->
+        <ScrollViewer>
+            <StackPanel VerticalAlignment="Top" HorizontalAlignment="Center" Margin="55,0,0,0" Orientation="Vertical">
+                <chart:RadialGaugeChart ChartSubTitle="Win Ratio" 
+                                Style="{StaticResource MinimalChartStyle}"
+                ChartTitle="Most Played Heroes">
+                    <chart:RadialGaugeChart.Series>
+                        <chart:ChartSeries DisplayMember="Hero"
+                            ItemsSource="{Binding Path=TopThreePlayed}"
+                            SeriesTitle="Match Statistics"
+                            ValueMember="WinRatio" />
+                    </chart:RadialGaugeChart.Series>
+                </chart:RadialGaugeChart>
+
+                <DataGrid Grid.Row="1" Grid.ColumnSpan="2" 
+                  VerticalAlignment="Top"
+                  HorizontalAlignment="Center" 
+                  Width="800" 
+                  ItemsSource="{Binding HeroStatistics}" 
+                  AutoGenerateColumns="False" 
+                  Background="#FF181818" 
+                  RowBackground="#FF181818" 
+                  Foreground="#FF00AADE"
+                  IsEnabled="True"
+                  IsReadOnly="True"
+                  CanUserResizeRows="False">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Hero" Binding="{Binding Hero}" Width="*" />
+                        <DataGridTextColumn Header="Total Matches" Binding="{Binding Matches}" Width="*" />
+                        <DataGridTextColumn Header="Wins" Binding="{Binding Wins}" Width="*" />
+                        <DataGridTextColumn Header="Losses" Binding="{Binding Losses}" Width="*" />
+                        <DataGridTextColumn Header="Win Ratio" Binding="{Binding WinRatio}" Width="*" />
+                        <DataGridTextColumn Header="Total Time Played" Binding="{Binding TimePlayed}" Width="*" />
+                    </DataGrid.Columns>
+                </DataGrid>
+            </StackPanel>
+        </ScrollViewer>
+
+
+    </Grid>
+</UserControl>
