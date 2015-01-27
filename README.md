@@ -11,6 +11,9 @@ Current features include:
 * Automatic monitoring for new replays - StormVault will automatically update when a match ends (can be disabled)
 * Graphical representation of statistic data
 
+![StormVault1](http://i.imgur.com/Y3lKuOy.png)
+![StormVault2](http://i.imgur.com/Rbrcfjg.png)
+
 # Requirements
 
 StormVault requires .NET 4.5 or above, which subsequently requires Windows 7 or above.
